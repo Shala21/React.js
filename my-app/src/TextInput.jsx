@@ -10,7 +10,7 @@ function TextInput() {
     return(
         <div>
             <label htmlFor="text">
-                <input id="text" type="text" value={inputValue} onChange={handleInput} />
+                <input id="text" type="text" value={inputValue} onChange={handleInput} placeholder="Writ hier"/>
             </label>
             <p>Value Input: {inputValue}</p>
         </div>

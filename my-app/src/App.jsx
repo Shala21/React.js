@@ -1,6 +1,7 @@
 import HelloWorld from "./HelloWorld";
 import Counter from "./Counter";
 import TextInput from "./TextInput";
+import LoginForm from "./LoginForm";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <HelloWorld />
       <Counter />
       <TextInput />
+      <LoginForm />
     </div>
   );
 }
