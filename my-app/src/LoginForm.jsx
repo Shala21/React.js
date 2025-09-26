@@ -25,7 +25,7 @@ function LoginForm() {
         />
       </div>
 
-      <div>
+        <div>
         <label htmlFor="password">Password</label><br />
         <input
           id="password"
