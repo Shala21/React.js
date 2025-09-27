@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 
 function UncontrolledInput() {
   // *1.creazione del ref con useRef con useRef *
