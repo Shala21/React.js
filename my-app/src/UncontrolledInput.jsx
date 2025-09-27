@@ -10,7 +10,7 @@ function UncontrolledInput() {
     // *Qui uso alert invece di console.log per mostrare il valore*
     alert('Value input: ' + inputRef.current.value);
   };
-
+            
   return (
      // * 3 Assegnazione del ref all input *
       // * Botteone onClick che chiama handleClick *
