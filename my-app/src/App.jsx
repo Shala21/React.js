@@ -1,4 +1,3 @@
-
 import HelloWorld from "./HelloWorld";
 import Counter from "./Counter";
 import TextInput from "./TextInput";
@@ -6,10 +5,14 @@ import LoginForm from "./LoginForm";
 import UncontrolledInput from "./UncontrolledInput";
 import ItemList from "./ItemList";
 import Card from "./Card";
+import { useFetch } from "./useFetch"; //  importa l’hook
 
 function App() {
+  const myItems = ["Mela", "Banana", "Arancia"];
 
-  const myItems = ['Mela', 'Banana', 'Arancia'];
+  //  usa il tuo hook
+  const { data, loading, error } = useFetch("https://jsonplaceholder.typicode.com/todos");
+
   return (
     <div>
       <h1>Main App</h1>
@@ -36,6 +39,18 @@ function App() {
         </ul>
       </Card>
 
+      <h5 style={{ fontSize: "20px" }}>Implement hook useFetch</h5>
+      {loading && <p>Caricamento dati...</p>}
+      {error && <p>Errore: {error}</p>}
+      {data && (
+        <ul>
+          {data.slice(0, 5).map((post) => (
+            <li key={post.id}>
+              <strong>{post.title}</strong>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
