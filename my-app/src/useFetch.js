@@ -8,7 +8,7 @@ export function useFetch(url) {
   useEffect(() => {
     if (!url) return;
 
-    let isMounted = true; // per evitare update se il componente è smontato
+    // let isMounted = true; // per evitare update se il componente è smontato
 
     const fetchData = async () => {
       setLoading(true);
@@ -20,18 +20,18 @@ export function useFetch(url) {
           throw new Error(`Errore HTTP: ${response.status}`);
         }
         const result = await response.json();
-        if (isMounted) setData(result);
+         setData(result);
       } catch (err) {
-        if (isMounted) setError(err.message);
+        setError(err.message);
       } finally {
-        if (isMounted) setLoading(false);
+        setLoading(false);
       }
     };
 
     fetchData();
 
     return () => {
-      isMounted = false;
+      // isMounted = false;
     };
   }, [url]);
 
