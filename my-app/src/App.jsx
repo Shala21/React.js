@@ -12,13 +12,13 @@ import { useState } from "react";
 
 function App() {
   // dichiara uno sate
-  
   const myItems = ["Mela", "Banana", "Arancia"];
   const [searchTerm, setSearchTerm] = useState();
 
   function handleInput(event) {
     setSearchTerm(event.target.value)
   }
+
   //  usa il tuo hook
   const { data, loading, error } = useFetch("https://jsonplaceholder.typicode.com/todos");
 
@@ -63,7 +63,7 @@ function App() {
           ))}
         </ul>
       )}
-      <h5 style={{ fontSize: "20px" }}>Input searchind form</h5>
+      <h5 style={{ fontSize: "20px" }}>Input searching form</h5>
       <input type="text" placeholder="search your item" value={searchTerm} onChange={handleInput} />
 
     </div>
