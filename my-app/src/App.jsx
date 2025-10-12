@@ -7,7 +7,7 @@ import ItemList from "./ItemList";
 import Card from "./Card";
 import { useFetch } from "./useFetch"; //  importa l’hook
 import useFilteredTodos  from "./useFilteredTodos"; //  importa l’hook
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 
 function App() {
@@ -23,6 +23,13 @@ function App() {
   const { data, loading, error } = useFetch("https://jsonplaceholder.typicode.com/todos");
 
   const fltredToDos = useFilteredTodos(data, searchTerm);
+
+  // using useRef in input  
+  const inputRef = useRef();
+
+  useEffect(() => {
+    inputRef.current.focus()
+  }, []);
 
 
   return (
@@ -65,6 +72,10 @@ function App() {
       )}
       <h5 style={{ fontSize: "20px" }}>Input searching form</h5>
       <input type="text" placeholder="search your item" value={searchTerm} onChange={handleInput} />
+      
+      {/* using useRef in input */}
+      <h5 style={{ fontSize: "20px" }}>Input using useRef</h5>
+      <input ref={inputRef} type="text" placeholder="Focus input"/>
 
     </div>
   );

@@ -1,9 +1,10 @@
-// import { useState, useEffect, useCallback } from 'react';
-
-//const useFilteredTodos = (todos, searchTerm) => {
-//  const [filteredTodos, setFilteredTodos] = useState(todos);
-
 /*
+/ import { useState, useEffect, useCallback } from 'react';
+
+/const useFilteredTodos = (todos, searchTerm) => {
+/  const [filteredTodos, setFilteredTodos] = useState(todos);
+
+
 
 useEffect(() => {
   const filtered = todos?.filter(todo => todo.title.toLowerCase().includes(searchTerm));
@@ -11,10 +12,8 @@ useEffect(() => {
   setFilteredTodos(filtered);
 }, [todos, searchTerm]);
 
-*/
 
-// Using useCallback for performance optimization
-/*
+/ Using useCallback for performance optimization
 
 const filterTodos = useCallback(() => {
   return todos?.filter(todo => todo.title.toLowerCase().includes(searchTerm));
