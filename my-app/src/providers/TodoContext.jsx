@@ -19,7 +19,7 @@ const TodoProvider = ({ children }) => {
 
         const data = await response.json();
 
-        //  CORRETTO: usa "data" non "result"
+        //  CORRETTO: usa data non result
         const formatted = data.slice(0, 10).map((todo) => ({
           id: todo.id,
           text: todo.title,
@@ -46,6 +46,7 @@ const TodoProvider = ({ children }) => {
 };
 
 /* 
+SECONDO METODO PER useContext
 export const TodoContext = createContext(null);
 
 const TodoProvider = ({ children }) => {
