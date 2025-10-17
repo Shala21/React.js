@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom"
+//poiche aggiungo layout comune non mi serve piu Link
+//import { Link } from "react-router-dom"
 
 function Home() {
 
     // Stato locale per salvare i dati ricevuti dall'API
     const [todos, setTodos] = useState([]);
-    const [laoding, setLoading] = useState(true);// per gestire il caricamento
+    const [loading, setLoading] = useState(true);// per gestire il caricamento
     const [error, setError] = useState(null);// per gestire eventuali errori
 
 
@@ -25,7 +26,7 @@ function Home() {
 
 
     //Gestione stati diversi
-    if (laoding) return <p>Loading..</p>;
+    if (loading) return <p>Loading..</p>;
     if (error) return <p>Error: {error}</p>;
 
 
@@ -38,7 +39,10 @@ function Home() {
                     <li key={todo.id}> {todo.todo} </li>
                 ))}
             </ul>
+            {/*
+            qui il link non to go back in caso serva lo rimtto
             <Link to="/about">About Page</Link>
+            */}
         </div>
     );
 }
