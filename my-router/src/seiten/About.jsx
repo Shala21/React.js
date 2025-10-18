@@ -1,13 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 //poiche aggiungo layout comune non mi serve piu Link
-//import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 function About() {
     const navigate = useNavigate(); // l’hook va qui, nel componente principale
 
     const goBack = () => {
-        navigate("/home"); // (attenzione: meglio /home tutto minuscolo se la route è così definita)
+        navigate("/"); // cosi mi fa tronare alla home
     };
 
     return (

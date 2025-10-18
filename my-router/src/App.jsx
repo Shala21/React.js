@@ -4,6 +4,8 @@ import { Routes, Route, Link } from "react-router-dom";
 import Home from "./seiten/Home";
 import About from "./seiten/About";
 import Layout from "./Layout";
+import TodoDetail from "./seiten/TodoDetail";
+
 
 function App() {
   return (
@@ -22,12 +24,14 @@ function App() {
     //  </div>
 
     <Routes>
-      {/* Layout comune che contiene Navbar e Outlet */}
+      {/* Layout comune con Navbar e Outlet */}
       <Route path="/" element={<Layout />}>
-        {/* Rotta principale ("/") */}
+        {/* Pagina principale */}
         <Route index element={<Home />} />
-        {/* Rotta "/about" */}
+        {/* Pagina About */}
         <Route path="about" element={<About />} />
+        {/* Pagina dettaglio To-Do */}
+        <Route path="todo/:id" element={<TodoDetail />} />
       </Route>
     </Routes>
   );

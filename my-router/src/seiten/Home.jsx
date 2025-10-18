@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 //poiche aggiungo layout comune non mi serve piu Link
-//import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 function Home() {
 
@@ -30,13 +30,15 @@ function Home() {
     if (error) return <p>Error: {error}</p>;
 
 
-
     return (
         <div style={{ textAlign: "center", marginTop: "20px" }}>
             <h1>Home Page</h1>
             <ul>
                 {todos.map((todo) => (
-                    <li key={todo.id}> {todo.todo} </li>
+                    <li key={todo.id}>
+                    <Link to={`/todo/${todo.id}`}>{todo.todo}</Link>
+                    </li>
+                    
                 ))}
             </ul>
             {/*
